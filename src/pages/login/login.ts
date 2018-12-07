@@ -1,6 +1,10 @@
+import { RegisterPage } from './../register/register';
 import { Component } from '@angular/core';
 import {  NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
-// import { RestProvider } from '../../providers/rest/rest';
+import { BaseUI } from "../../common/baseui";
+import { RestProvider } from '../../providers/rest/rest';
+import { Storage } from '@ionic/storage';
+import { ThrowStmt } from '@angular/compiler';
 // import { BaseUI } from '../../common/baseui';
 /**
  * Generated class for the LoginPage page.
@@ -13,7 +17,7 @@ import {  NavController, NavParams, ViewController, LoadingController, ToastCont
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage {
+export class LoginPage extends BaseUI{
   mobile: any;
   password: any;
   errorMessage: any;
@@ -23,41 +27,38 @@ export class LoginPage {
     public viewCtrl: ViewController,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
-    // public rest: RestProvider,
+    public rest: RestProvider,
+    public  storage:Storage,
+
     ) {
-     
+     super()
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
- 
+ login(){
+   var loading= super.showLoading(this.loadingCtrl,"登录中。。。");
+   this.rest.login(this.mobile,this.password)
+   .subscribe(/* subscribe订阅回来的东西 */
+    f=>{
+      if (f["Status"]=="OK") {
+        // 处理登录成功的页面跳转
+        this.storage.set('UserId',f["UserId"]);
+        loading.dismiss();  /* 取消登录中的加载图标 */
+        this.dismiss();  /* 关闭当前弹出的登录页面 */
+      } else {
+        loading.dismiss();
+        super.showToast(this.toastCtrl,f["StatusContent"]);
+      }
+    },
+    error=>this.errorMessage = <any>error)
+ }
 
-  register(){
-    alert("注册成功")
+ pushRegisterPage(){
+    this.navCtrl.push(RegisterPage)
   }
-
-  // login() {
-  //   var loading = super.showLoading(this.loadingCtrl, "登录中...");
-  //   this.rest.login(this.mobile, this.password)
-  //     .subscribe(
-  //     f => {
-  //       if (f["Status"] == "OK") {
-  //         //处理登录成功的页面跳转
-  //         //你也可以存储接口返回的 token
-  //         // this.storage.set('UserId', f["UserId"]);
-  //         // loading.dismiss();
-  //         // this.dismiss();
-  //       }
-  //       else {
-  //         loading.dismiss();
-  //         super.showToast(this.toastCtrl, f["StatusContent"]);
-  //       }
-  //     },
-  //     error => this.errorMessage = <any>error);
-  // }
-
 
   /**
    * 关闭当前页面的方法
@@ -65,7 +66,7 @@ export class LoginPage {
    * @memberof LoginPage
    */
   dismiss() {
-    this.viewCtrl.dismiss();
+    this.navCtrl.pop();
   }
 
 

@@ -18,6 +18,7 @@ import { ChatPage } from '../pages/chat/chat';
 import { NotificationPage } from '../pages/notification/notification';
 import { MorePage } from '../pages/more/more';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -25,6 +26,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
+import { IonicStorageModule } from '@ionic/storage';
 // import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -37,14 +39,17 @@ import { RestProvider } from '../providers/rest/rest';
     HomePage,
     TabsPage,
     LoginPage,
+    RegisterPage
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
-    ComponentsModule,HttpModule, JsonpModule,
+    ComponentsModule,
+    HttpModule, 
+    JsonpModule,
     IonicModule.forRoot(MyApp,{
-      tabsHideOnSubPages:'true',
-      backButtonText:'撤退'
-    })
+      backButtonTex:'返回',
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],  /* 启动的模块 */
   entryComponents: [    /* 配置不会再模板中使用的组件 */
@@ -56,6 +61,8 @@ import { RestProvider } from '../providers/rest/rest';
     HomePage,
     TabsPage,
     LoginPage,
+    RegisterPage,
+
   ],
   providers: [    /* 配置服务 */
     StatusBar,
