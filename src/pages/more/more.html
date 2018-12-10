@@ -26,14 +26,17 @@
   </div>
 
   <div *ngIf="logined" >
-    <ion-card>
-      <ion-card-header text-center>
-          已登录
-      </ion-card-header>
-      <ion-card-content text-center>
-        登录成功咯
-      </ion-card-content>
-    </ion-card>
+    <ion-list class="marginTop" [navPush]="UserPage">
+      <button ion-item >
+        <ion-avatar item-left>
+          <!-- <img src="../../assets/imgs//pc20.jpg"> -->
+          <img src="{{headface}}" alt="">
+        </ion-avatar>
+        <!-- <h2>徐凤年</h2> -->
+        <h2>{{UserNickName}}</h2>
+        <p>查看个人主页或编辑简介 </p>
+      </button>
+    </ion-list>
       
   </div>
 </ion-content>

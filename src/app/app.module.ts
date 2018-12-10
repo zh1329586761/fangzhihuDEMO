@@ -1,3 +1,4 @@
+import { UserPage } from './../pages/user/user';
 
 // 根模块，告诉我们怎么组装应用
 
@@ -39,7 +40,9 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    UserPage,
+
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
@@ -62,7 +65,7 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     LoginPage,
     RegisterPage,
-
+    UserPage,
   ],
   providers: [    /* 配置服务 */
     StatusBar,

@@ -46,6 +46,18 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlLogin+"?mobile="+mobile+"&password="+password);/* url的拼接 */
   }
 
+ 
+
+  getUserInfo(userId): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlUserInfo + "?userid=" + userId);
+  }
+
+
+
+  updateNickName(userId, nickname): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlUpdateNickName + "?userid=" + userId + "&nickname=" + nickname);
+  }
+
   register(mobile,nickname,password):Observable<string[]>{
     return this.getUrlReturn(this.apiUrlRegister+"?mobile="+mobile+"&nickname="+nickname+"&password="+password)
   }

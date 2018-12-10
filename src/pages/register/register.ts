@@ -49,7 +49,16 @@ export class RegisterPage  extends BaseUI{
   }
   
   doRegister(){
-    if (this.password!=this.confirmPassword) {
+    if (!(/^1[345789]\d{9}$/.test(this.mobile))) {
+      super.showToast(this.toastCtrl,"您的手机号码格式不正确")     
+    }else if(this.nickname.length<3 ||this.nickname.length>10
+      ){
+      super.showToast(this.toastCtrl,'昵称请在6~15个字符之内，请重新输入')
+    }else if(this.password.length<6 ||this.password.length>15 ||
+      this.confirmPassword.length<6 ||this.confirmPassword.length>15 ){
+      super.showToast(this.toastCtrl,'密码长度应在6到15个字符之内')
+    }
+    else if (this.password!=this.confirmPassword) {
       super.showToast(this.toastCtrl,'密码输入不一致，请重新输入')
     } else {
       var loading =super.showLoading(this.loadingCtrl,'注册加载中...');
@@ -66,7 +75,7 @@ export class RegisterPage  extends BaseUI{
                       super.showToast(this.toastCtrl,f["StatusContent"]);/* 返回接口上的内容告诉为什么注册失败了 */
                     }
                   },
-                  error => this.errorMessage = <any>error 
+                  error => this.errorMessage = <any>error
                 );
     }
 

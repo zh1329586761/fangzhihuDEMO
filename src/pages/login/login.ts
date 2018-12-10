@@ -1,3 +1,4 @@
+import { MorePage } from './../more/more';
 import { RegisterPage } from './../register/register';
 import { Component } from '@angular/core';
 import {  NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
@@ -48,6 +49,7 @@ export class LoginPage extends BaseUI{
         this.storage.set('UserId',f["UserId"]);
         loading.dismiss();  /* 取消登录中的加载图标 */
         this.dismiss();  /* 关闭当前弹出的登录页面 */
+        // this.navCtrl.push(MorePage);
       } else {
         loading.dismiss();
         super.showToast(this.toastCtrl,f["StatusContent"]);

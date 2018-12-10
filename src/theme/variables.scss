@@ -42,6 +42,9 @@ $colors: (
 );
 
 
+[padding] h1:first-child, [padding] h2:first-child, [padding] h3:first-child, [padding] h4:first-child, [padding] h5:first-child, [padding] h6:first-child {
+  margin-top: 0rem !important;
+}
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
