@@ -1,3 +1,8 @@
+import { File } from "@ionic-native/file";
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
+import { Transfer } from '@ionic-native/transfer';
+import { HeadfacePage } from './../pages/headface/headface';
 import { UserPage } from './../pages/user/user';
 
 // 根模块，告诉我们怎么组装应用
@@ -42,6 +47,7 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     RegisterPage,
     UserPage,
+    HeadfacePage,
 
   ],
   imports: [  /* 引入模块or依赖的模块 */
@@ -66,12 +72,18 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     RegisterPage,
     UserPage,
+    HeadfacePage,
   ],
   providers: [    /* 配置服务 */
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
+    File,
+    Transfer,
+    FilePath,
+    Camera,
+
   ]
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+import { HeadfacePage } from './../headface/headface';
 import { Storage } from '@ionic/storage';
 import { LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { Component } from '@angular/core';
@@ -21,6 +22,7 @@ export class UserPage extends BaseUI{
   public headface:string = "http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg?";
   public nickname:string = '加载中。。。';
   public errorMessage:any;
+  public HeadfacePage=HeadfacePage;
   constructor(public navCtrl:NavController,
               public navParams:NavParams,
               public modalCtrl:ModalController,
