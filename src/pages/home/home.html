@@ -1,12 +1,68 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>主页</ion-title>
-  </ion-navbar>
+  <ion-toolbar >
+    <ion-searchbar placeholder="扶摇直上九万里"></ion-searchbar>
+    <ion-icon name="text" class="search_icon"  (tap)="gotoChat()"></ion-icon>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>空白tabs模板</h2>
+<ion-content>
+  <div class="floatMenu">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 text-center>
+            <div  (tap)="gotoQuestion()">
+              <ion-icon name="create"></ion-icon>
+               提问
+            </div>
+        </ion-col>
+        <ion-col col-4 text-center>
+            <div>
+              <span style="float: left;color: #ddd; ">|</span>
+              <ion-icon name="albums"></ion-icon>
+               回答
+            </div>
+        </ion-col>
+        <ion-col col-4 text-center>
+            <div>
+              <span style="float: left;color: #ddd; ">|</span>
+              <ion-icon name="share-alt"></ion-icon>
+               分享
+            </div>
+        </ion-col>
 
-  <ion-icon name="car"></ion-icon>
+        
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  
+  
+  <ion-card *ngFor="let f of feeds" (click)="gotoDetails(f.IdentityId)"  > 
+    
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{f.HeadFace}}">
+            <img src="" alt="">
+          </ion-avatar>
+          <p>{{f.UserNickName}}
+            <ion-icon class="more_button" name="more"></ion-icon>
+          </p>
+        </ion-item>
+
+        <h2>{{f.ContentTitle}}</h2>
+        <ion-card-content>
+          <p>{{f.ContentSummary}}</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col col-8 center text-left>
+            <ion-note>
+              {{f.LikeCount}}&nbsp;赞同&nbsp;&nbsp;·&nbsp;&nbsp;{{f.CommentCount}}&nbsp;评论&nbsp;&nbsp;·&nbsp;&nbsp;关注问题
+            </ion-note>
+          </ion-col>
+          <ion-col col-4></ion-col>
+        </ion-row>
+
+  </ion-card>
 
 </ion-content>

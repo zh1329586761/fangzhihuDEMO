@@ -1,3 +1,5 @@
+import { AnswerPage } from './../pages/answer/answer';
+import { QuestionPage } from './../pages/question/question';
 import { File } from "@ionic-native/file";
 import { Camera } from '@ionic-native/camera';
 import { FilePath } from '@ionic-native/file-path';
@@ -33,6 +35,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
 import { IonicStorageModule } from '@ionic/storage';
+import { DetailsPage } from '../pages/details/details';
 // import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -48,7 +51,9 @@ import { IonicStorageModule } from '@ionic/storage';
     RegisterPage,
     UserPage,
     HeadfacePage,
-
+    QuestionPage,
+    DetailsPage,
+    AnswerPage,
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
@@ -73,6 +78,10 @@ import { IonicStorageModule } from '@ionic/storage';
     RegisterPage,
     UserPage,
     HeadfacePage,
+    QuestionPage,
+    DetailsPage,
+    AnswerPage,
+
   ],
   providers: [    /* 配置服务 */
     StatusBar,
@@ -83,6 +92,7 @@ import { IonicStorageModule } from '@ionic/storage';
     Transfer,
     FilePath,
     Camera,
+    
 
   ]
 })
