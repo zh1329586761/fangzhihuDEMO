@@ -86,6 +86,9 @@ export class DetailsPage extends BaseUI{
 
   showAnswerPage(){
     let modal = this.modalCtrl.create(AnswerPage,{"id":this.id});
+    modal.onDidDismiss(()=>{
+      this.loadQuestion(this.id);
+    });
     modal.present();
   }
 }

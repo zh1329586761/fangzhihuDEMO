@@ -1,3 +1,4 @@
+import { ChatdetailsPage } from './../pages/chatdetails/chatdetails';
 import { AnswerPage } from './../pages/answer/answer';
 import { QuestionPage } from './../pages/question/question';
 import { File } from "@ionic-native/file";
@@ -54,6 +55,7 @@ import { DetailsPage } from '../pages/details/details';
     QuestionPage,
     DetailsPage,
     AnswerPage,
+    ChatdetailsPage,
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
@@ -81,6 +83,7 @@ import { DetailsPage } from '../pages/details/details';
     QuestionPage,
     DetailsPage,
     AnswerPage,
+    ChatdetailsPage,
 
   ],
   providers: [    /* 配置服务 */
