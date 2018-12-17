@@ -37,6 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
 import { IonicStorageModule } from '@ionic/storage';
 import { DetailsPage } from '../pages/details/details';
+import { EmojiProvider } from '../providers/emoji/emoji';
+import { ChatserviceProvider } from '../providers/chatservice/chatservice';
 // import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -59,12 +61,12 @@ import { DetailsPage } from '../pages/details/details';
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
-    ComponentsModule,
     HttpModule, 
     JsonpModule,
     IonicModule.forRoot(MyApp,{
       backButtonTex:'返回',
     }),
+    ComponentsModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],  /* 启动的模块 */
@@ -95,6 +97,8 @@ import { DetailsPage } from '../pages/details/details';
     Transfer,
     FilePath,
     Camera,
+    EmojiProvider,
+    ChatserviceProvider,
     
 
   ]
