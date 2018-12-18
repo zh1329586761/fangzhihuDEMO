@@ -10,9 +10,12 @@
         [class.right]="m.userId===userId"
         >
           <img [src]="m.userImgUrl" class="user-img">
+          <!-- 发送消息时，头像下方有加载动画 -->
+          
+          <ion-spinner name="dots" *ngIf="m.status === 'pending'" ></ion-spinner>
               <div class="msg-detail">
                     <div class="msg-info">
-                      <p>{{m.username}} &nbsp; {{m.time}}</p>
+                      <p>{{m.username}} &nbsp; {{m.time | relativetime}}</p>
                     </div>
 
                     <div class="msg-content">

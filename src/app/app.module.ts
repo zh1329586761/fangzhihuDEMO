@@ -8,6 +8,7 @@ import { Transfer } from '@ionic-native/transfer';
 import { HeadfacePage } from './../pages/headface/headface';
 import { UserPage } from './../pages/user/user';
 
+import { RelativetimePipe } from "../pipes/relativetime/relativetime";
 // 根模块，告诉我们怎么组装应用
 
 // 引入angular以及ionic的系统模块
@@ -58,6 +59,7 @@ import { ChatserviceProvider } from '../providers/chatservice/chatservice';
     DetailsPage,
     AnswerPage,
     ChatdetailsPage,
+    RelativetimePipe
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
