@@ -1,3 +1,5 @@
+import { ScanPage } from './../pages/scan/scan';
+import { UserdatalistPage } from './../pages/userdatalist/userdatalist';
 import { ChatdetailsPage } from './../pages/chatdetails/chatdetails';
 import { AnswerPage } from './../pages/answer/answer';
 import { QuestionPage } from './../pages/question/question';
@@ -40,6 +42,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { DetailsPage } from '../pages/details/details';
 import { EmojiProvider } from '../providers/emoji/emoji';
 import { ChatserviceProvider } from '../providers/chatservice/chatservice';
+import { SettingsProvider } from '../providers/settings/settings';
 // import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -59,7 +62,9 @@ import { ChatserviceProvider } from '../providers/chatservice/chatservice';
     DetailsPage,
     AnswerPage,
     ChatdetailsPage,
-    RelativetimePipe
+    RelativetimePipe,
+    UserdatalistPage,
+    ScanPage
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
@@ -88,7 +93,8 @@ import { ChatserviceProvider } from '../providers/chatservice/chatservice';
     DetailsPage,
     AnswerPage,
     ChatdetailsPage,
-
+    UserdatalistPage,
+    ScanPage
   ],
   providers: [    /* 配置服务 */
     StatusBar,
@@ -101,6 +107,7 @@ import { ChatserviceProvider } from '../providers/chatservice/chatservice';
     Camera,
     EmojiProvider,
     ChatserviceProvider,
+    SettingsProvider,
     
 
   ]

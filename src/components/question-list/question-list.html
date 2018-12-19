@@ -1,6 +1,6 @@
 <ion-list>
-  <ion-item>
-    <h2></h2>
-    <p></p>
+  <ion-item *ngFor="let q of question" (click)="gotoDetails(q.IdendityId)" >
+    <h2>{{q.ContentTitle}}</h2>
+    <p>{{q.ContentSummary}}</p>
   </ion-item>
 </ion-list>

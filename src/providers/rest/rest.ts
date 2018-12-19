@@ -145,9 +145,12 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlQuestionList);
   }
 
-  
+  // 获取通知列表
   getUserNotifications(userId): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlUserNotifications + "?userid=" + userId);
   }
 
+  getUserQuestionList(userId,type): Observable<string[]> {
+    return this.getUrlReturn(this.apiGetUserQuestionList + "?userid=" + userId +"&type=" + type);
+  }
 }

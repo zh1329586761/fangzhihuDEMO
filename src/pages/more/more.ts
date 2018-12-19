@@ -1,3 +1,6 @@
+import { ScanPage } from './../scan/scan';
+import { SettingsProvider } from './../../providers/settings/settings';
+import { UserdatalistPage } from './../userdatalist/userdatalist';
 import { UserPage } from './../user/user';
 import { Component } from '@angular/core';
 import {  NavController, NavParams, ModalController, LoadingController, IonicPage } from 'ionic-angular';
@@ -24,18 +27,27 @@ export class MorePage extends BaseUI {
   public headface:string;
   public userinfo:string[];
   public UserNickName:string;
-
+  public selectedTheme:string;
   public UserPage=UserPage;
+  public ScanPage=ScanPage;
+
   constructor(public navCtrl:NavController,
               public navParams:NavParams,
               public modalCtrl:ModalController,
               public storage:Storage,
               public loadCtrl:LoadingController,
               public rest:RestProvider,
+              private settings:SettingsProvider,
+
               ) {
    super();
+   this.settings.getActiveTheme().subscribe(
+    (val)=>{ 
+      this.selectedTheme = val
+    }
+  );
   }
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.loadUserPage();
   }
 
@@ -79,6 +91,26 @@ export class MorePage extends BaseUI {
   }
 
 
-
+  gotoDataList(type){
+    this.navCtrl.push(UserdatalistPage,{"dataType":type});
+  }
   
+  /**
+   *跳转到扫描二维码的页面，这里加上animate=false的参数是为了相机能够在整个屏幕中
+   显示 如果不加的话 相机就出不来
+   *  animate默认设置为true
+   * @memberof MorePage
+   */
+  
+  gotoscanQR(){
+    this.navCtrl.push(ScanPage,null,{"animate":false});
+  }
+
+  toggleChangeTheme(){
+        if (this.selectedTheme === 'dark-theme') {
+          this.settings.setActiveTheme('light');
+        } else {
+          this.settings.setActiveTheme('dark-theme')
+        }
+  }
 }

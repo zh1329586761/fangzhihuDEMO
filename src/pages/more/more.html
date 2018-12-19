@@ -40,22 +40,38 @@
       
     <ion-list class="marginTop" >
           <ion-list-header>
-            我的慕课
+            啦啦啦啦啦
           </ion-list-header>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('question')" >
               <ion-icon name="paper" item-start color="primary"></ion-icon>
               <ion-label>我的提问</ion-label>
           </button>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('favourite')">
               <ion-icon name="star" item-start color="orange"></ion-icon>
               <ion-label>我的关注</ion-label>
           </button>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('answer')">
               <ion-icon name="disc" item-start color="blue"></ion-icon>
               <ion-label>我的回答</ion-label>
           </button>
       </ion-list>
 
-
+      <ion-list class="marginTop" >
+        <ion-list-header>
+          设置
+        </ion-list-header>
+       <ion-item >
+         <ion-icon name="cloudy-night" item-start color="danger"></ion-icon>
+         <ion-label>夜间模式</ion-label>
+         <ion-toggle color="primary" (ionChange)="toggleChangeTheme()"></ion-toggle>
+       </ion-item>
+       
+          <button ion-item (click)="gotoscanQR()" >
+            <ion-icon name="qr-scanner" item-start color="light"></ion-icon>
+            <ion-label>扫一扫</ion-label>
+           </button>
+       
+        
+    </ion-list>
   </div>
 </ion-content>
