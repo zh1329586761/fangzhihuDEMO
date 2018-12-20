@@ -9,10 +9,15 @@ import * as moment from "moment";
   name: 'relativetime',
 })
 export class RelativetimePipe implements PipeTransform {
-  /**
-   * Takes a value and makes it lowercase.
-   */
-  transform(value: string, ...args) {
+ /**将日期格式转化为对应时间格式
+  *
+  *
+  * @param {string} value
+  * @param {*} args
+  * @returns
+  * @memberof RelativetimePipe
+  */
+ transform(value: string, ...args) {
     return moment(value).toNow();
   }
 }

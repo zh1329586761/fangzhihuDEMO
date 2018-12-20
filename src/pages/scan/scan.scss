@@ -1,3 +1,41 @@
 page-scan {
+    html,body,ion-app,ion-content,ion-page,.nav-decor,{
+        background-color:transparent !important;
+    }
 
+    
+
+    .zhong{
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        // background-color: red;
+        border: orange 1px solid;
+            .line{
+                position: absolute;
+                z-index: 9;
+                // top: 16px;
+                height: 2px;
+                width: 100%;
+                background-color: #090;
+                
+                animation: scan 3s infinite alternate;
+                -webkit-animation: scan 3s infinite alternate;
+               
+            }
+    }
+
+    @keyframes scan {
+        from{
+            top:0;
+        }
+        to{
+            top: 100%;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+import { VersionsPage } from './../versions/versions';
 import { ScanPage } from './../scan/scan';
 import { SettingsProvider } from './../../providers/settings/settings';
 import { UserdatalistPage } from './../userdatalist/userdatalist';
@@ -104,6 +105,10 @@ export class MorePage extends BaseUI {
   
   gotoscanQR(){
     this.navCtrl.push(ScanPage,null,{"animate":false});
+  }
+
+  gotoappVersion(){
+    this.navCtrl.push(VersionsPage);
   }
 
   toggleChangeTheme(){

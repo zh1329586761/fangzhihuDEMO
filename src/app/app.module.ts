@@ -1,3 +1,6 @@
+import { VersionsPage } from './../pages/versions/versions';
+import { AppVersion } from "@ionic-native/app-version";
+import { QRScanner } from '@ionic-native/qr-scanner';
 import { ScanPage } from './../pages/scan/scan';
 import { UserdatalistPage } from './../pages/userdatalist/userdatalist';
 import { ChatdetailsPage } from './../pages/chatdetails/chatdetails';
@@ -64,7 +67,8 @@ import { SettingsProvider } from '../providers/settings/settings';
     ChatdetailsPage,
     RelativetimePipe,
     UserdatalistPage,
-    ScanPage
+    ScanPage,
+    VersionsPage
   ],
   imports: [  /* 引入模块or依赖的模块 */
     BrowserModule,
@@ -94,7 +98,9 @@ import { SettingsProvider } from '../providers/settings/settings';
     AnswerPage,
     ChatdetailsPage,
     UserdatalistPage,
-    ScanPage
+    ScanPage,
+    VersionsPage
+    
   ],
   providers: [    /* 配置服务 */
     StatusBar,
@@ -108,8 +114,9 @@ import { SettingsProvider } from '../providers/settings/settings';
     EmojiProvider,
     ChatserviceProvider,
     SettingsProvider,
+    QRScanner,
+    AppVersion
     
-
   ]
 })
 export class AppModule {}
