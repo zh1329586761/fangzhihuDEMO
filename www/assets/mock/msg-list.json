@@ -1,0 +1,29 @@
+{
+  "array":[
+    {
+      "messageId":"1",
+      "userId":"140000198202211138",
+      "username":"徐凤年",
+      "userImgUrl":"https://imoocqa.gugujiankong.com/users/59f334ce647eb43028cf9946.jpg",
+      "toUserId":"123321",
+      "toUserName":"雪中悍刀行",
+      "toUserImgUrl":"http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg",
+      "time":1511071097000,
+      "message":"技术活儿，本世子殿下，没法儿赏啊",
+      "status":"success"
+
+    },
+    {
+      "messageId":"2",
+      "userId":"123321",
+      "username":"雪中悍刀行",
+      "userImgUrl":"http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg",
+      "toUserId":"140000198202211138",
+      "toUserName":"徐凤年",
+      "toUserImgUrl":"https://imoocqa.gugujiankong.com/users/59f334ce647eb43028cf9946.jpg",
+      "time":1511071097000,
+      "message":"小二上酒",
+      "status":"success"
+    }
+  ]
+}
